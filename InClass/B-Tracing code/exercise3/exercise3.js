@@ -3,23 +3,22 @@ const getRepos = function(repoName) {
     .then(data => data.json())
     .then(function(response) {
       return response.map(function(rep) {
+		console.log(rep.name);
         return rep.name;
       });
     });
 };
 
+
+
 const migracodeRepos = getRepos('migracode-barcelona');
-const mcRepos = getRepos('your-repo');
 console.log("Loading...");
 
 
-foreach   .name
-map
+var myElement = document.querySelector("#main");
+var paragraph = document.createElement("p"); 
+paragraph.innerText = migracodeRepos;
+myElement.appendChild(paragraph);
 
-console.log....
-
-/*
-  Let's trace this piece of code - what is the value of result with this input
-  var mentors = ['Irina', 'Ashleigh', 'Etza'];
-  var result = greetPeople(mentors)
-*/
+//Task1. Fix the code
+//Task2. Create a <p> for each repository

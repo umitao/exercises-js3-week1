@@ -31,9 +31,10 @@ function removeVowelsForWords(words) {
 /*
   Task 1
   Let's trace this piece of code - what is the value of result with this input
+  */
   var result = removeVowels('samuel');
-  what is the value of result?
-*/
+
+
 
 /*
 	Task 2
