@@ -11,7 +11,7 @@ const arrow = () => "es6 is awesome";
 //   return name;
 // }
 
-const defaultParameter = (name) => name;
+const defaultParameter = (name = "sam") => name;
 
 // Use the spread operator to combine arr1 and arr2
 function combineArrays(arr1, arr2) {
