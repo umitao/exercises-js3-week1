@@ -61,8 +61,6 @@ class Circle extends Polygon {
     this.radius = radius;
   }
   get circleArea() {
-    // console.log(this.radius);
-    // console.log(Math.pow(this.radius, 2));
     return Math.pow(this.radius, 2) * Math.PI;
   }
   sayName() {
