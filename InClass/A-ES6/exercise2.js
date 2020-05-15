@@ -5,14 +5,13 @@ class Polygon {
     this.width = width;
   }
   sayName() {
-    console.log('Hi, I am a ' + this.name);
+    console.log("Hi, I am a " + this.name);
   }
 }
 
-let p = new Polygon('Polygon', 300, 400);
+let p = new Polygon("Polygon", 300, 400);
 p.sayName();
-console.log('The area of this polygon is ' + p.area);
-
+console.log("The area of this polygon is " + p.area);
 
 class Rectangle extends Polygon {
   constructor(height, width) {
@@ -21,19 +20,56 @@ class Rectangle extends Polygon {
     this.sides = 4;
     //this.area = this.height * this.width;
   }
-  get area() {return this.width * this.height;}
+  get area() {
+    return this.width * this.height;
+  }
   sayName() {
-    console.log('Hi I am a polygon and my name is ' + this.name + '.');
+    console.log("Hi I am a polygon and my name is " + this.name + ".");
   }
 }
 
 let r = new Rectangle(50, 60);
 r.sayName();
 //r.area = 3;
-console.log('The area of this polygon is ' + r.area);
+console.log("The area of this polygon is " + r.area);
 
 //Create 2 new classes that extend from polygon: triangle and circle and log their names and areas
 
+class Triangle extends Polygon {
+  constructor(height, width) {
+    super(height, width);
+    this.name = "Triangle";
+    this.sides = 3;
+  }
+  get triangleArea() {
+    return (this.width * this.height) / 2;
+  }
+  sayName() {
+    console.log(`Hi I am a ${this.name} and my area is ${t.triangleArea}`);
+  }
+}
 
+let t = new Triangle(3, 5);
+t.sayName();
+console.log("Area of this triangle is " + t.triangleArea);
 
+class Circle extends Polygon {
+  constructor(radius, height, width) {
+    super(height, width);
+    this.name = "Circle";
+    this.sides = 0;
+    this.radius = radius;
+  }
+  get circleArea() {
+    // console.log(this.radius);
+    // console.log(Math.pow(this.radius, 2));
+    return Math.pow(this.radius, 2) * Math.PI;
+  }
+  sayName() {
+    console.log(`Hi I am a ${this.name} and my area is ${this.circleArea}`);
+  }
+}
 
+let c = new Circle(5);
+c.sayName();
+console.log("Area of this circle is " + c.circleArea);

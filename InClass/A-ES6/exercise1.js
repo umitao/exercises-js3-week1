@@ -13,6 +13,8 @@ const arrow = () => "es6 is awesome";
 
 const defaultParameter = (name = "sam") => name;
 
+console.log(defaultParameter("ali"));
+
 // Use the spread operator to combine arr1 and arr2
 function combineArrays(arr1, arr2) {
   return arr1.concat(arr2);
