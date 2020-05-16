@@ -41,17 +41,17 @@ class Triangle extends Polygon {
     this.name = "Triangle";
     this.sides = 3;
   }
-  get triangleArea() {
+  get area() {
     return (this.width * this.height) / 2;
   }
   sayName() {
-    console.log(`Hi I am a ${this.name} and my area is ${t.triangleArea}`);
+    console.log(`Hi I am a ${this.name} and my area is ${t.area}`);
   }
 }
 
 let t = new Triangle(3, 5);
 t.sayName();
-console.log("Area of this triangle is " + t.triangleArea);
+console.log("Area of this triangle is " + t.area);
 
 class Circle extends Polygon {
   constructor(radius, height, width) {
@@ -60,14 +60,14 @@ class Circle extends Polygon {
     this.sides = 0;
     this.radius = radius;
   }
-  get circleArea() {
+  get area() {
     return Math.pow(this.radius, 2) * Math.PI;
   }
   sayName() {
-    console.log(`Hi I am a ${this.name} and my area is ${this.circleArea}`);
+    console.log(`Hi I am a ${this.name} and my area is ${this.area}`);
   }
 }
 
 let c = new Circle(5);
 c.sayName();
-console.log("Area of this circle is " + c.circleArea);
+console.log("Area of this circle is " + c.area);
