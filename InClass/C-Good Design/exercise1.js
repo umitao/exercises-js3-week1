@@ -1,5 +1,3 @@
-
-
 /*Task. go through all of these issues and make appropriate improvements to the code.
 
 1. Naming: the function has a bad name, myFunction() tells you nothing about
@@ -39,8 +37,10 @@
    
    */
 
+// As I don't have any information regarding what incomeTax1 and incomeTax2 means, I am not able to give them a better name.
 
-function myFunction(salary, taxCode, incomeTax1, incomeTax2, ownsCar) {
+//Calculating net salary after deducting appropriate Tax Code and student loan expenses
+function calculateIncome(salary, taxCode, incomeTax1, incomeTax2) {
   var totalIncomeTax = incomeTax1 + incomeTax2;
   var studentLoan = (salary - 17775) * 0.09;
   var originalSalary = salary;
@@ -56,17 +56,22 @@ function myFunction(salary, taxCode, incomeTax1, incomeTax2, ownsCar) {
 
   var deductions = [nationalInsurance, totalIncomeTax, studentLoan];
 
-  salary = salary - deductions[0];
-  salary = salary - deductions[1];
-  salary = salary - deductions[2];
+  for (var i = 0; i < deductions.length; i++) {
+    salary = salary - deductions[i];
+  }
+
+  //Converted repetitive code to a for loop above
+  // salary = salary - deductions[0];
+  // salary = salary - deductions[1];
+  // salary = salary - deductions[2];
 
   return (
-    "Your gross income is £" +
+    "Your gross income is $" +
     originalSalary.toString() +
-    " and your net income is £" +
+    " and your net income is $" +
     salary.toString() +
     "."
   );
 }
 
-console.log(myFunction(28000, "1150L", 1000, 580, false));
+console.log(calculateIncome(28000, "1150L", 1000, 580));
